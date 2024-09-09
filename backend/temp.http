@@ -1,0 +1,57 @@
+GET http://localhost:5000
+
+###
+GET http://localhost:5000/api/login/getLoginDetails
+
+###
+POST http://localhost:5000/api/login/verifyLogin
+Content-Type: application/json
+
+{
+    "username": "brij",
+    "password": "brij"
+}
+
+###
+GET http://localhost:5000/api/admin/getCourseDetails
+
+###
+POST http://localhost:5000/api/admin/addSubject
+Content-Type: application/json
+
+{
+    "courseID": 1,
+    "subjectName": "DM",
+    "semester": "5"
+}
+
+###
+GET http://localhost:5000/api/admin/getSubjects?courseId=1&semester=2
+
+###
+POST http://localhost:5000/api/admin/createExam
+Content-Type: application/json
+
+{
+    "subjectId": 2,
+    "questionCount": 3,
+    "examDate": "2021-10-27T13:07"
+}
+
+###
+GET http://localhost:5000/api/admin/getExams?subjectId=2
+
+###
+POST http://localhost:5000/api/admin/inviteUsers
+
+###
+POST http://localhost:5000/api/admin/takeExam
+Content-Type: application/json
+
+{
+    "invitationId": "fd61654d-0899-4928-86c1-96a4e4bb6e24",
+    "emailId": "brij.bhasin7@gmail.com"
+}
+
+###
+GET http://localhost:5000/api/admin/getResults?examId=1
